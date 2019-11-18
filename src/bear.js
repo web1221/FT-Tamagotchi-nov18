@@ -9,8 +9,8 @@ export class Tamagotchi {
   }
   // food related -------
   setHunger() {
-    setInterval(() => {
-      // this.die();
+  let hungryInterval = setInterval(() => {
+      this.die(hungryInterval);
       this.sick();
       this.foodLevel--;
     }, 3000);
@@ -29,7 +29,8 @@ export class Tamagotchi {
 
   // sleep related --------
   setRested() {
-    setInterval(() => {
+  let restInterval = setInterval(() => {
+    this.die(restInterval)
       this.restedLevel--;
     }, 3000);
   }
@@ -38,7 +39,8 @@ export class Tamagotchi {
   }
   // Play related ---------
   setPlay(){
-    setInterval(() => {
+    let playInterval = setInterval(() => {
+      this.die(playInterval)
       this.playLevel--;
     }, 3000);
 
@@ -56,19 +58,17 @@ export class Tamagotchi {
   }
 
   sick() {
-   if(this.restedLevel <= 0 && this.playLevel <= 0 || this.foodLevel <= 0) {
-      clearInterval( setInterval());
-    }else if(this.restedLevel === 3 || this.playLevel === 3){
+    if(this.restedLevel === 3 || this.playLevel === 3){
       this.foodLevel -= 3;
+    }
   }
-  // die(){
-  //   if(this.restedLevel <= 0 && this.playLevel <= 0 || this.foodLevel <= 0) {
-  //
-  //     clearInterval(this.setHunger());
-  //   } else {
-  //     return false;
-  //   }
-  // }
+    die(interval){
+      if(this.restedLevel <= 0 && this.playLevel <= 0 || this.foodLevel <= 0) {
+        clearInterval(interval);
+      } else {
+        return false;
+      }
+    }
 
-}
+
 }
