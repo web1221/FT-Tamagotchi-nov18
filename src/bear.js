@@ -51,12 +51,12 @@ export class Tamagotchi {
   }
 
   sick() {
-
     if(this.restedLevel === 4 || this.playLevel === 4){
       this.foodLevel -= 3;
-      alert("your tamagotchi is sick!:(");
+      // alert("your tamagotchi is sick!:(");
     }
   }
+
   die(interval){
     if(this.restedLevel <= 0 || this.playLevel <= 0 || this.foodLevel <= 0) {
       clearInterval(interval);

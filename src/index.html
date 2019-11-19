@@ -9,9 +9,13 @@
 
   <h1>Tamagotchi!</h1>
   <form class="userName" action="index.html" method="post">
-    <div class="forn-group">
+    <div class="form-group">
       <label for="nameInput">Enter a name for your Tamagotchi:</label>
       <input type="text" id="nameInput">
+    </div>
+    <div class="form-group">
+      <label for="nameInput">Enter a number:</label>
+      <input type="number" id="pokenumber">
     </div>
     <button type="submit" name="button">Submit Name</button>
   </form>
@@ -22,6 +26,11 @@
       <li id="rest"></li>
       <li id="play"></li>
     </ul>
+  </div>
+  <div class="img">
+    <p><span class="pokeOutput"></span></p>
+    <img id="pokeimage" src="" alt="">
+
   </div>
   <button class="careButtons" type="button" id="feedButton">Feed</button>
   <button class="careButtons" type="button" id="restButton">Rest</button>

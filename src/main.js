@@ -16,8 +16,27 @@ $(document).ready(function(){
   let newTama = new Tamagotchi();
   $(".userName").submit(function(event){
     event.preventDefault();
-    newTama.name = $("#nameInput").val();
+    newTama.name = $("input#nameInput").val();
+    var pokenumber = $("input#pokenumber").val();
     $('.nameOutput').text(`Tamagotchi name: ${newTama.name}`);
+    let request = new XMLHttpRequest();
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokenumber}`
+
+    request.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) {
+        const response = JSON.parse(this.responseText);
+        getElements(response);
+      }
+    }
+
+    request.open("GET", url, true);
+    request.send();
+    console.log(url);
+    const getElements = function(response) {
+      // $('.pokeOutput').text(`Ability: ${response.sprites[0].front_default}`);
+       document.getElementById("pokeimage").src = response.sprites.front_default
+      console.log(response.sprites.front_default);
+    }
   });
   newTama.setHunger();
   newTama.setRested();
