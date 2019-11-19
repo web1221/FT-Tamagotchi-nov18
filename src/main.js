@@ -6,9 +6,9 @@ import {Tamagotchi} from './bear.js';
 
 function setAppend(newTama){
   setInterval(() => {
-    $('li#food').text("Food Level: " + newTama.foodLevel);
-    $('li#rest').text("Rested Level: " + newTama.restedLevel);
-    $('li#play').text("Play Level: " + newTama.playLevel);
+    $('li#food').text(`Food Level: ${newTama.foodLevel}`);
+    $('li#rest').text(`Rested Level: ${newTama.restedLevel}`);
+    $('li#play').text(`Play Level: ${newTama.playLevel}`);
   }, 10);
 }
 
