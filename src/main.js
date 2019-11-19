@@ -33,8 +33,7 @@ $(document).ready(function(){
     request.send();
     console.log(url);
     const getElements = function(response) {
-      // $('.pokeOutput').text(`Ability: ${response.sprites[0].front_default}`);
-       document.getElementById("pokeimage").src = response.sprites.front_default
+      document.getElementById("pokeimage").src = response.sprites.front_default
       console.log(response.sprites.front_default);
     }
   });
