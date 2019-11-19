@@ -9,30 +9,24 @@ export class Tamagotchi {
   }
   // food related -------
   setHunger() {
-  let hungryInterval = setInterval(() => {
-      this.die(hungryInterval);
-      this.sick();
+    let hungryInterval = setInterval(() => {
       this.foodLevel--;
-    }, 3000);
+      this.sick();
+      this.die(hungryInterval);
+    }, 2000);
 
   }
-  areYouHungry() {
-    if (this.foodLevel < 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
+
   feed() {
-    return this.foodLevel = 10;
+    this.foodLevel = 10;
   }
 
   // sleep related --------
   setRested() {
-  let restInterval = setInterval(() => {
-    this.die(restInterval)
+    let restInterval = setInterval(() => {
       this.restedLevel--;
-    }, 3000);
+      this.die(restInterval);
+    }, 2000);
   }
   rest(){
     this.restedLevel = 10;
@@ -40,12 +34,11 @@ export class Tamagotchi {
   // Play related ---------
   setPlay(){
     let playInterval = setInterval(() => {
-      this.die(playInterval)
       this.playLevel--;
-    }, 3000);
+      this.die(playInterval);
+    }, 2000);
 
   }
-
   play() {
     this.playLevel = 10;
   }
@@ -54,21 +47,21 @@ export class Tamagotchi {
   levelUp(){
     setInterval(() => {
       this.level += 1;
-    },3000);
+    },2000);
   }
 
   sick() {
-    if(this.restedLevel === 3 || this.playLevel === 3){
+
+    if(this.restedLevel === 4 || this.playLevel === 4){
       this.foodLevel -= 3;
+      alert("your tamagotchi is sick!:(");
     }
   }
-    die(interval){
-      if(this.restedLevel <= 0 && this.playLevel <= 0 || this.foodLevel <= 0) {
-        clearInterval(interval);
-      } else {
-        return false;
-      }
+  die(interval){
+    if(this.restedLevel <= 0 || this.playLevel <= 0 || this.foodLevel <= 0) {
+      clearInterval(interval);
     }
+  }
 
 
 }
