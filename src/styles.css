@@ -1,3 +1,29 @@
 .careButtons {
   margin-top: 20px;
 }
+
+#pokeimage {
+  width: 220px;
+  height: 220px;
+}
+
+h1{
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+  margin-left: 260px;
+  margin-right: 260px;
+}
+
+.bodyBorder {
+  border: 3px groove lightblue;
+  border-radius: 10%;
+  padding: 30px;
+}
+
+.form-group{
+
+}
+.img {
+  display: none;
+}

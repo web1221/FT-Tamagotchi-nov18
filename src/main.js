@@ -13,7 +13,9 @@ function setAppend(newTama){
 }
 
 $(document).ready(function(){
+
   let newTama = new Tamagotchi();
+
   $(".userName").submit(function(event){
     event.preventDefault();
     newTama.name = $("input#nameInput").val();
@@ -21,7 +23,6 @@ $(document).ready(function(){
     $('.nameOutput').text(`Tamagotchi name: ${newTama.name}`);
     let request = new XMLHttpRequest();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokenumber}`
-
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
         const response = JSON.parse(this.responseText);
@@ -31,11 +32,11 @@ $(document).ready(function(){
 
     request.open("GET", url, true);
     request.send();
-    console.log(url);
     const getElements = function(response) {
       document.getElementById("pokeimage").src = response.sprites.front_default
       console.log(response.sprites.front_default);
     }
+    $('.img').show();
   });
   newTama.setHunger();
   newTama.setRested();
