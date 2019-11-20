@@ -36,12 +36,12 @@ $(document).ready(function(){
       document.getElementById("pokeimage").src = response.sprites.front_default
       console.log(response.sprites.front_default);
     }
-    $('.img').show();
+    $('.img, .healthStats').show();
+    newTama.setHunger();
+    newTama.setRested();
+    newTama.setPlay();
+    setAppend(newTama);
   });
-  newTama.setHunger();
-  newTama.setRested();
-  newTama.setPlay();
-  setAppend(newTama);
 
 
   $("#feedButton").click(function(){

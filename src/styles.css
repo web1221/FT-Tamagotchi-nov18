@@ -21,9 +21,13 @@ h1{
   padding: 30px;
 }
 
-.form-group{
+
+.healthStats {
+  display: none;
+  text-align: center;
 
 }
-.img {
-  display: none;
+ul{
+  list-style-type: none;
+  padding-right: 20px;
 }
