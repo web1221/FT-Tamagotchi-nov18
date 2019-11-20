@@ -25,6 +25,11 @@ h1{
 .healthStats {
   display: none;
   text-align: center;
+  border: 10px solid black;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding-bottom: 15px;
+
 
 }
 ul{
